@@ -1,20 +1,15 @@
 package personnages;
 
-public class Gaulois {
-	private String name;
-	private int force;
+public class Gaulois extends Personnage{
 	
 	public Gaulois(String name, int force) {
-		this.name = name;
-		this.force = force;
+		super(name, force);
 		
 	}
 	
-	public String getName() {
-		return name;
+	@Override
+	public String donnerAuteur() {
+		return "Gaulois";
 	}
 	
-	public void parler(String text) {
-		System.out.println("Le gaulois " + this.name +" : \""+text+"\"");;
-	}
 }
