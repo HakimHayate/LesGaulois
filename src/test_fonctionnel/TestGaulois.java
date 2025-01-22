@@ -8,10 +8,26 @@ public class TestGaulois {
 		
 		Romain minus = new Romain("Minus", 6);
 		minus.parler("UN GAU.....");
-		asterix.frapper(minus);
-		minus.frapper(asterix);
-		asterix.frapper(minus);
-		minus.frapper(asterix);
-		asterix.frapper(minus);
+		
+		minus.addEquipement(Equipements.BOUCLIER);
+		minus.addEquipement(Equipements.CASQUE);
+		minus.addEquipement(Equipements.PLASTRON);
+		
+		Druide druide = new Druide("Healer", 5);
+		druide.fabriquerPotion();
+		druide.giveBoost(asterix);
+		asterix.addEquipement(Equipements.BOUCLIER);
+		
+		while (true) {
+			asterix.frapper(minus);
+			if (minus.isDown()) {
+				break;
+			}
+			minus.frapper(asterix);
+			if (asterix.isDown()) {
+				break;
+			}
+			System.out.println();
+		}
 	}
 }

@@ -27,6 +27,8 @@ public class TestSItes {
 		Soldat soldat5 = new Soldat("Briseradius", 4, Grades.SOLDAT); 
 		Soldat soldat6 = new Soldat("Chorus", 4, Grades.CENTURION); 
 		
+		Druide druide = new Druide("Healer", 5);
+		
 		village.ajouterGaulois(gaulois1);
 		village.ajouterGaulois(gaulois2);
 		village.ajouterGaulois(gaulois3);
@@ -45,5 +47,9 @@ public class TestSItes {
 		camp.changerCommandant(soldat6);
 		camp.changerCommandant(soldat5);
 		
+		gaulois1.frapper(soldat6);
+		druide.fabriquerPotion();
+		druide.giveBoost(gaulois1);
+		gaulois1.frapper(soldat6);
 	}
 }
