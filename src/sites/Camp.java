@@ -13,6 +13,7 @@ public class Camp {
 	
 	public Soldat getCommandant() {
 		return commandant;
+		
 	}
 	
 	public void ajouterSoldat(Soldat soldat) {
